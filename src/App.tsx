@@ -5,6 +5,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import store from './Redux';
 import Routes from './Routes';
+import CountriesProvider from './Context';
 
 const client = new ApolloClient({
   uri: 'https://countries-274616.ew.r.appspot.com/',
@@ -20,10 +21,12 @@ const theme = createMuiTheme({
 const App = () => (
   <Provider store={store}>
     <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <Routes />
-        <CssBaseline />
-      </ThemeProvider>
+      <CountriesProvider>
+        <ThemeProvider theme={theme}>
+          <Routes />
+          <CssBaseline />
+        </ThemeProvider>
+      </CountriesProvider>
     </ApolloProvider>
   </Provider>
 );

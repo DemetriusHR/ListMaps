@@ -13,7 +13,7 @@ type StateStore = {
   countries: typeof initialState;
 };
 
-const Redux = () => {
+const ReduxPage = () => {
   const dispatch = useDispatch();
   const countries = useSelector((state: StateStore) => state.countries.countries);
   const { loading, error } = useGetCountryRedux();
@@ -46,7 +46,6 @@ const Redux = () => {
       <Box padding={4}>
         <Grid container spacing={4}>
           {countries?.map((country) => (
-            // eslint-disable-next-line
             <CardCountry key={country._id} country={country} onEdit={handleEdit} />
           ))}
         </Grid>
@@ -55,4 +54,4 @@ const Redux = () => {
   );
 };
 
-export default Redux;
+export default ReduxPage;
