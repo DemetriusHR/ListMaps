@@ -14,3 +14,4 @@
 *.svg
 *.md
 *.txt
+*reportWebVitals.ts

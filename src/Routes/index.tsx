@@ -1,14 +1,12 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-const InicialPage = lazy(() => import('../Pages/Inicial'));
-const DetalhesPage = lazy(() => import('../Pages/Detalhes'));
+const ReduxPage = lazy(() => import('../Pages/Redux'));
 
 const Routes = () => (
   <BrowserRouter>
     <Suspense fallback="Carregando...">
-      <Route path="/" component={InicialPage} exact />
-      <Route path="/detalhes" component={DetalhesPage} exact />
+      <Route path="/" component={ReduxPage} exact />
     </Suspense>
   </BrowserRouter>
 );
