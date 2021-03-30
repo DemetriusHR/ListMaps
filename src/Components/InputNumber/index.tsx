@@ -22,6 +22,7 @@ const InputNumber = ({
     {...props}
     InputProps={{
       ...InputProps,
+      // eslint-disable-next-line
       inputComponent: InputNumberBase as any,
       inputProps: {
         mask,
